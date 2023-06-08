@@ -1,0 +1,28 @@
+{% extends 'navbar/default.html' %}
+{% load static %}
+
+{% block staticfiles %}
+<link rel="stylesheet" type='text/css' href="{% static 'css/background.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'css/glassmorphism.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'css/landingpages/searchbox.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="search-container text-center d-flex align-items-center justify-content-center bg mx-auto">
+        <div class="search-box">
+            <div class="form-label"><b>Enter the Smile format</b></div>
+            <form role="search" action="#" method="GET">
+                <input type="text" class="form-control" placeholder="Search..." name="ele">
+                <div class="text-center mt-2">
+                    <input class="form-check-input" type="radio" name="options" value="fingerprint">
+                    <label class="" for="options"><b>Fingerprint</b></label>
+                    <input class="form-check-input" type="radio" name="options" value="descriptor">
+                    <label for="options"><b>Descriptor</b></label>
+                </div>
+                <button type="submit" class="btn btn-dark search-btn mt-3 mb-5">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

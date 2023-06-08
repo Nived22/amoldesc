@@ -1,0 +1,66 @@
+{% extends 'navbar/secondary.html' %}
+{% load static %}
+{% block staticfiles %}
+<link rel="stylesheet" type='text/css' href="{% static 'css/background.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'css/application/downloadpage.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'css/glassmorphism.css' %}">
+{% endblock %}
+{% block main %}
+
+<div class="container">
+    <h1 class="text-center pt-3">Fingerprint Generation</h1>
+    <div class="element text-center mb-3">{{smile}}</div>
+    <div class="bg">
+        <div class="row mx-auto text-box">
+            <div class="col">
+                <textarea class="form-control textarea" id="text-area-1">{{maccs}}</textarea>
+                <button class="btn btn-dark download-btn">Download MACCS</button>
+            </div>
+            <div class="col">
+                <textarea class="form-control textarea" id="text-area-2">{{rdk}}</textarea>
+                <button class="btn btn-dark download-btn">Download RDK</button>
+            </div>
+        </div>
+        <div class="row mx-auto text-box">
+            <div class="col">
+                <textarea class="form-control textarea" id="text-area-3">{{pairs}}</textarea>
+                <button class="btn btn-dark download-btn">Download Pairs</button>
+            </div>
+            <div class="col">
+                <textarea class="form-control textarea" id="text-area-4">{{tts}}</textarea>
+                <button class="btn btn-dark download-btn">Download TTS</button>
+            </div>
+            <div class="col">
+                <textarea class="form-control textarea" id="text-area-5">{{morgan}}</textarea>
+                <button class="btn btn-dark download-btn">Download Morgan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var downloadBtns = document.getElementsByClassName('download-btn');
+
+        for (var i = 0; i < downloadBtns.length; i++) {
+            downloadBtns[i].addEventListener('click', function () {
+                var textareaId = this.previousElementSibling.id;
+                var content = document.getElementById(textareaId).value;
+                var fileName = 'file' + '.txt';
+                downloadFile(content, fileName);
+            });
+        }
+
+        function downloadFile(content, fileName) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+            element.setAttribute('download', fileName);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+    });
+</script>
+
+{% endblock %}

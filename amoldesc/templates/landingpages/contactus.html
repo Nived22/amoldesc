@@ -1,0 +1,31 @@
+{% extends 'navbar/default.html' %}
+{% load static %}
+
+{% block staticfiles %}
+<link rel="stylesheet" type='text/css' href="{% static 'css/background.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'css/glassmorphism.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'css/landingpages/searchbox.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<div class="col-md-10 mx-auto col-lg-6 mt-5">
+    <form class="p-4 p-md-5 border rounded-3 bg">
+        <div class="content text-center">
+            We value your opinion and strive to provide the best user experience. Help us improve by
+            sharing your thoughts on our website. Let us know what you like, dislike, and how we can enhance it. Your
+            feedback is invaluable in shaping our future.
+            <br><br>
+            Do you find our website user-friendly? Is there anything that you particularly like or dislike about the
+            layout, design, or functionality? We would appreciate any comments or suggestions you may have to improve
+            these aspects. If you have encountered any technical issues or errors, please let us know so we can address
+            them promptly.
+        </div>
+        <a href="mailto:nived@gmail.com">
+            <button class="w-100 btn btn-lg btn-dark mt-5" type="submit">Send Us Email</button>
+        </a>
+
+    </form>
+</div>
+
+{% endblock %}

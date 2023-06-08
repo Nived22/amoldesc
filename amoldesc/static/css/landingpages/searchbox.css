@@ -1,0 +1,18 @@
+.search-container{
+    margin-top: 8%;
+    width: 800px;
+}
+
+.search-box {
+    max-width: 600px;
+    width: 100%;
+    padding: 10px;
+}
+
+.search-btn {
+    width: 100%;
+}
+
+.form-label{
+    font-size: 20px;
+}

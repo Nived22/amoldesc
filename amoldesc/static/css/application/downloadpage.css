@@ -1,0 +1,15 @@
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.textarea {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.text-box {
+    padding: 2%;
+}
